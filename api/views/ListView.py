@@ -14,4 +14,4 @@ class ClassList(View):
             print(serializer.data)
         else:
             print(serializer.errors)
-        return render(request, "home.html", {"class":modelclass})
+        return render(request, "HOME.html", {"class":modelclass})
