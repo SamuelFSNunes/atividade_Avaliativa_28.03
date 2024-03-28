@@ -1,0 +1,22 @@
+# Arquivos gerados pelo Python
+*.pyc
+__pycache__/
+
+# Ambientes virtuais (exemplo: virtualenv, pipenv, poetry)
+.env
+venv/
+env/
+.venv/
+pipenv/
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.swp
+
+# Arquivos de configuração específicos do ambiente
+.env
+
+# Dependências instaladas
+/lib/
+/lib64/
