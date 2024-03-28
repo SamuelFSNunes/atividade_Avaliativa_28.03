@@ -14,16 +14,13 @@
         <div class="col-md-4 p-2">
           <div class="card">
             <div class="card-header">
-              <h1>Hello World</h1>
+              Nome da classe: {{ book.classname }}
             </div>
             <div class="card-body">
                 <p class="card-text">
-                  <h1>Hello World</h1>
-                    {% comment %} : {{ . }} <br />
-                    : {{ . }} <br />
-                    : {{ . }} <br />
-                    : {{ . }} <br />
-                    : {{ . }} {% endcomment %}
+                    Descrição: {{ book.details }} <br />
+                    Horário: {{ book.time }} <br />
+                    Status: {{ book.status }}
                 </p>
             </div>
           </div>
