@@ -24,6 +24,9 @@ class ClassRepository:
         document = self.getColletion().find({})
         return document
     
+    def deleteOne(self, document):
+        self.getColletion().find_one_and_delete(document)
+    
     def insert(self, document):
         self.getColletion().insert_one(document)
 
