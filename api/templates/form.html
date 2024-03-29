@@ -1,6 +1,6 @@
 {% extends "main.html" %}
 
-{% block verse%}
+{% block verse %}
 {{ verse }}
 {% endblock %}
 
@@ -15,11 +15,22 @@
             <div class="col-md-12 p-2">
                 <div class="card">
                     <div class="card-body">
-                        {% for field in form %}
-                        <p class="card-text">   
-                        {{ field.label }}: {{ field }}
+                        <p class="card-text">
+                            <label for="id_classname">Class Name:</label>
+                            <input type="text" name="classname" id="id_classname" maxlength="255" required>
                         </p>
-                        {% endfor %}
+                        <p class="card-text">
+                            <label for="id_details">Details:</label>
+                            <textarea name="details" id="id_details" rows="2" cols="30" maxlength="255" required></textarea>
+                        </p>
+                        <p class="card-text">
+                            <label for="id_time">Time:</label>
+                            <input type="datetime-local" name="time" id="id_time" required>
+                        </p>
+                        <p class="card-text">
+                            <label for="id_status">Status:</label>
+                            <input type="checkbox" name="status" id="id_status" checked>
+                        </p>
                     </div>
                     <div class="card-footer">
                         <input type="submit" value="Save">

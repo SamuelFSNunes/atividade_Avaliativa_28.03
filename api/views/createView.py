@@ -14,12 +14,12 @@ class CreateClass(View):
         if class_form.is_valid():
             serializer = ClassSerializer(data=class_form.cleaned_data)
             if serializer.is_valid():
-                repository = ClassRepository(collectionName='class')
+                repository = ClassRepository(collectionName='classes')
                 repository.insert(serializer.validated_data)
-                return redirect('createView') 
+                return redirect('create classes') 
             else:
                 print(serializer.errors)
         else:
             print(class_form.errors)
 
-        return render(request, "home.html", {"form": class_form})
+        return render(request, "main.html", {"form": class_form})
