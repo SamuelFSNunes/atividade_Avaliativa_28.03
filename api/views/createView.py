@@ -3,7 +3,6 @@ from django.views import View
 from api.forms import ClassForm
 from api.serializers import ClassSerializer
 from api.repositories import ClassRepository
-from api.views.ListView import ClassList
 
 class CreateClass(View):
     def get(self, request):
@@ -23,4 +22,4 @@ class CreateClass(View):
         else:
             print(class_form.errors)
 
-        return redirect(ClassList)
+        return render(request, "home.html", {"form": class_form})
