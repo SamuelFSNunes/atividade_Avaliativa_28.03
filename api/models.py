@@ -2,19 +2,19 @@ from typing import Any
 
 class ClassEntity:
 
-    def __init__(self, classname, details,
-                 time, status) -> None:
+    def _init_(self, classname, details,
+                 time, status, reserved_time) -> None:
         self.classname = classname
         self.details = details
         self.time = time
         self.status = status
+        self.reserved_time = reserved_time
 
-    def __str__(self) -> str:
+    def _str_(self) -> str:
         return self.classname
     
-    def __getattribute__(self, __name: str) -> Any:
-        if (__name=='time'):
-            return object.__getattribute__(self, __name).strftime("%d/%m/%Y %H:%M:%S")
+    def _getattribute_(self, __name: str) -> Any:
+        if (__name=='time' or __name=='reserved_time'):
+            return object._getattribute_(self, __name).strftime("%H:%M")
         else:
-            return object.__getattribute__(self, __name)
-        
+            return object._getattribute_(self, __name)
