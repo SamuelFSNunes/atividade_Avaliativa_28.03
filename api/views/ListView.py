@@ -11,9 +11,15 @@ class ClassList(View):
         classes = list(repository.getAll())
         serializer = ClassSerializer(data=classes, many=True)
         if (serializer.is_valid()):
-            data = {}
-            data["books"] = serializer.save()
+            books = serializer.save()
             print(serializer.data)
         else:
             print(serializer.errors)
-        return render(request, "home.html", data)
+        return render(request, "home.html", {"books":books})
+    
+class WeatherReset(View):
+    def get(self, request): 
+        repository = ClassRepository(collectionName='classes')
+        repository.deleteAll()
+
+        return redirect('booklist')

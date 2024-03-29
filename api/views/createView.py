@@ -16,7 +16,7 @@ class CreateClass(View):
             if serializer.is_valid():
                 repository = ClassRepository(collectionName='classes')
                 repository.insert(serializer.validated_data)
-                return redirect('create classes') 
+                return redirect('booklist') 
             else:
                 print(serializer.errors)
         else:
