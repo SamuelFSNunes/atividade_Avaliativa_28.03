@@ -5,15 +5,18 @@ from api.serializers import ClassSerializer, ClassEntity
 from datetime import datetime
 
 
-class ClassList(View):
+class ClassGenerate(View):
     def get(self, request):
         repository = ClassRepository(collectionName='classes')
-        classes = list(repository.getAll())
-        serializer = ClassSerializer(data=classes, many=True)
+        classes = ClassEntity(
+            classname="Sala ADS-1",
+            details="Sala dos programadores tlg",
+            time=datetime.now(),
+            status=True
+        )
+        serializer = ClassSerializer(data=classes.__dict__)
         if (serializer.is_valid()):
-            data = {}
-            data["books"] = serializer.save()
-            print(serializer.data)
+            repository.insert(serializer.data)
         else:
             print(serializer.errors)
-        return render(request, "home.html", data)
+        return redirect('booklist')
