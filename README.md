@@ -14,14 +14,14 @@ Certifique-se de ter o Python instalado em seu sistema. Se não tiver, você pod
 Clone o repositório da API para o seu ambiente de desenvolvimento:
 
 ```python
-git clone https://github.com/seu-usuario/api-salas-de-aula.git
+git clone https://github.com/SamuelFSNunes/atividade_Avaliativa_28.03.git
 ```
 - Instalar Dependências:
 
 Navegue até o diretório do projeto e instale as dependências listadas no arquivo requirements.txt:
 
 ```pyton
-cd api-salas-de-aula
+cd atividade_Avaliativa_28
 pip install -r requirements.txt
 ```
 - Por fim, inicie o servidor Django:
