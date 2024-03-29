@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from forms import ClassForm
-from serializers import ClassSerializer
-from repositories import ClassRepository
+from api.forms import ClassForm
+from api.serializers import ClassSerializer
+from api.repositories import ClassRepository
 
-class ClassCriar(View):
+class CreateClass(View):
     def get(self, request):
         class_form = ClassForm()
-        return render(request, "class_form.html", {"form": class_form})
+        return render(request, "form.html", {"form": class_form})
     
     def post(self, request):
         class_form = ClassForm(request.POST)
@@ -22,4 +22,4 @@ class ClassCriar(View):
         else:
             print(class_form.errors)
 
-        return render(request, "class_form.html", {"form": class_form})
+        return render(request, "home.html", {"form": class_form})
